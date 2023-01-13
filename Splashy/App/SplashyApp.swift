@@ -1,9 +1,3 @@
-//
-//  SplashyApp.swift
-//  Splashy
-//
-//  Created by Greg Price on 12/01/2023.
-//
 
 import SwiftUI
 
