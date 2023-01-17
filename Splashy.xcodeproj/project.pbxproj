@@ -11,7 +11,6 @@
 		F31D8B96297063940072A5DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8B95297063940072A5DF /* ContentView.swift */; };
 		F31D8B98297063970072A5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31D8B97297063970072A5DF /* Assets.xcassets */; };
 		F31D8B9B297063970072A5DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31D8B9A297063970072A5DF /* Preview Assets.xcassets */; };
-		F31D8BA5297063970072A5DF /* SplashyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BA4297063970072A5DF /* SplashyTests.swift */; };
 		F31D8BAF297063970072A5DF /* SplashyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BAE297063970072A5DF /* SplashyUITests.swift */; };
 		F31D8BB1297063970072A5DF /* SplashyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BB0297063970072A5DF /* SplashyUITestsLaunchTests.swift */; };
 		F31D8BC12970731C0072A5DF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BC02970731C0072A5DF /* SearchView.swift */; };
@@ -21,6 +20,9 @@
 		F31D8BCC297192550072A5DF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BCB297192550072A5DF /* Request.swift */; };
 		F31D8BCE29719BA60072A5DF /* SplashyAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BCD29719BA60072A5DF /* SplashyAppState.swift */; };
 		F31D8BD12971B0CC0072A5DF /* UnsplashModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BD02971B0CC0072A5DF /* UnsplashModels.swift */; };
+		F3D3AEC72976A7F700372A31 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC62976A7F700372A31 /* SearchRow.swift */; };
+		F3D3AEC92976A88D00372A31 /* SearchRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC82976A88D00372A31 /* SearchRowModel.swift */; };
+		F3D3AECB2976AB8400372A31 /* SearchRowModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECA2976AB8400372A31 /* SearchRowModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,6 @@
 		F31D8B97297063970072A5DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31D8B9A297063970072A5DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F31D8BA0297063970072A5DF /* SplashyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F31D8BA4297063970072A5DF /* SplashyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashyTests.swift; sourceTree = "<group>"; };
 		F31D8BAA297063970072A5DF /* SplashyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31D8BAE297063970072A5DF /* SplashyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashyUITests.swift; sourceTree = "<group>"; };
 		F31D8BB0297063970072A5DF /* SplashyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -58,6 +59,9 @@
 		F31D8BCB297192550072A5DF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F31D8BCD29719BA60072A5DF /* SplashyAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashyAppState.swift; sourceTree = "<group>"; };
 		F31D8BD02971B0CC0072A5DF /* UnsplashModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashModels.swift; sourceTree = "<group>"; };
+		F3D3AEC62976A7F700372A31 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		F3D3AEC82976A88D00372A31 /* SearchRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowModel.swift; sourceTree = "<group>"; };
+		F3D3AECA2976AB8400372A31 /* SearchRowModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,7 @@
 		F31D8BA3297063970072A5DF /* SplashyTests */ = {
 			isa = PBXGroup;
 			children = (
-				F31D8BA4297063970072A5DF /* SplashyTests.swift */,
+				F3D3AECA2976AB8400372A31 /* SearchRowModelTests.swift */,
 			);
 			path = SplashyTests;
 			sourceTree = "<group>";
@@ -175,6 +179,8 @@
 			children = (
 				F31D8BC02970731C0072A5DF /* SearchView.swift */,
 				F31D8BC22970733D0072A5DF /* SearchViewModel.swift */,
+				F3D3AEC62976A7F700372A31 /* SearchRow.swift */,
+				F3D3AEC82976A88D00372A31 /* SearchRowModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -338,8 +344,10 @@
 				F31D8BD12971B0CC0072A5DF /* UnsplashModels.swift in Sources */,
 				F31D8BC12970731C0072A5DF /* SearchView.swift in Sources */,
 				F31D8BC32970733D0072A5DF /* SearchViewModel.swift in Sources */,
+				F3D3AEC92976A88D00372A31 /* SearchRowModel.swift in Sources */,
 				F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */,
 				F31D8BCC297192550072A5DF /* Request.swift in Sources */,
+				F3D3AEC72976A7F700372A31 /* SearchRow.swift in Sources */,
 				F31D8B94297063940072A5DF /* SplashyApp.swift in Sources */,
 				F31D8BCE29719BA60072A5DF /* SplashyAppState.swift in Sources */,
 				F31D8BC8297097BA0072A5DF /* API.swift in Sources */,
@@ -350,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31D8BA5297063970072A5DF /* SplashyTests.swift in Sources */,
+				F3D3AECB2976AB8400372A31 /* SearchRowModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,7 @@ import Foundation
 
 //MARK: Unsplash Config
 
+let unsplash = API(session: .shared)
 let unsplashKey = "iZtw8MF31vX7HRImIxwViLf8LnOBeESxKvNfbihdGHs" // demo key, accepts 50 requests per hour
 let unsplashScheme = "https"
 let unsplashHost = "api.unsplash.com"
@@ -11,9 +12,13 @@ let unsplashHeaders = [
     "Authorization": "Client-ID \(unsplashKey)"
 ]
 
-//MARK: Unsplash Requests
+let unsplashDecoder: JSONDecoder = {
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    return decoder
+}()
 
-let unsplash = API(session: .shared)
+//MARK: Unsplash Requests
 
 extension Request {
     static func searchPhotos(query: String, perPage: Int = 20) -> Request {
@@ -39,21 +44,10 @@ fileprivate extension Request {
     }
 }
 
-let unsplashDecoder: JSONDecoder = {
-    let decoder = JSONDecoder()
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
-    return decoder
-}()
-
 extension API {
     func call<T: Decodable>(_ request: Request) -> AnyPublisher<T, Error> {
         send(request: request, decoder: unsplashDecoder)
     }
 }
-
-// delete below and remove import statements
-let decoder = JSONDecoder()
-
-let pub: AnyPublisher<[String], Error> = unsplash.call(.searchPhotos(query: "test"))
 
 

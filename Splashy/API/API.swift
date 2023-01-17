@@ -2,9 +2,6 @@
 import Foundation
 import Combine
 
-// issues
-// Errors are not customised (manually test this, and look back at the countries demo project)
-
 enum APIError: Error {
     case invalidUrl
     case unexpectedResponse
@@ -28,9 +25,11 @@ fileprivate extension Publisher where Output == URLSession.DataTaskPublisher.Out
     func tryData() -> AnyPublisher<Data, Error> {
         tryMap { result in
             guard let statusCode = (result.response as? HTTPURLResponse)?.statusCode else {
-                throw APIError.unexpectedResponse }
+                throw APIError.unexpectedResponse
+            }
             guard (200 ..< 300).contains(statusCode) else {
-                throw APIError.failure(statusCode: statusCode) }
+                throw APIError.failure(statusCode: statusCode)
+            }
             return result.data
         }
         .eraseToAnyPublisher()

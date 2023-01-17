@@ -6,14 +6,8 @@ struct SearchView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-//                ForEach(viewModel.searchResults, id: \.self) { name in
-//                    NavigationLink {
-//                        Text(name)
-//                    } label: {
-//                        Text(name)
-//                    }
-//                }
+            List(viewModel.searchResults) {
+                SearchRow(viewModel: .init(photo: $0))
             }
             .navigationTitle("Splashy")
         }
@@ -26,3 +20,5 @@ struct SearchView_Previews: PreviewProvider {
         SearchView(viewModel: .init())
     }
 }
+
+
