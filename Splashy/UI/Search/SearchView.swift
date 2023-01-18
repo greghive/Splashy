@@ -6,9 +6,23 @@ struct SearchView: View {
 
     var body: some View {
         NavigationStack {
-            PhotoGrid(photos: viewModel.searchResults, numColumns: 3)
+            content
                 .navigationTitle("Splashy")
                 .searchable(text: $viewModel.searchTerm)
+        }
+    }
+    
+    @ViewBuilder private var content: some View {
+        switch viewModel.searchState {
+
+        case .idle:
+            EmptyView()
+        
+        case .success(let photos):
+            PhotoGrid(photos: photos, numColumns: 3)
+        
+        case .error(_):
+            EmptyView()
         }
     }
 }
