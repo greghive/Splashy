@@ -23,6 +23,8 @@
 		F3D3AEC72976A7F700372A31 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC62976A7F700372A31 /* SearchRow.swift */; };
 		F3D3AEC92976A88D00372A31 /* SearchRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC82976A88D00372A31 /* SearchRowModel.swift */; };
 		F3D3AECB2976AB8400372A31 /* SearchRowModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECA2976AB8400372A31 /* SearchRowModelTests.swift */; };
+		F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECC2976E90A00372A31 /* PhotoImage.swift */; };
+		F3D3AECF297812D200372A31 /* PhotoGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECE297812D100372A31 /* PhotoGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		F3D3AEC62976A7F700372A31 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
 		F3D3AEC82976A88D00372A31 /* SearchRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowModel.swift; sourceTree = "<group>"; };
 		F3D3AECA2976AB8400372A31 /* SearchRowModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowModelTests.swift; sourceTree = "<group>"; };
+		F3D3AECC2976E90A00372A31 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
+		F3D3AECE297812D100372A31 /* PhotoGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 		F31D8BC5297073640072A5DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3D3AECE297812D100372A31 /* PhotoGrid.swift */,
+				F3D3AECC2976E90A00372A31 /* PhotoImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -343,7 +349,9 @@
 				F31D8B96297063940072A5DF /* ContentView.swift in Sources */,
 				F31D8BD12971B0CC0072A5DF /* UnsplashModels.swift in Sources */,
 				F31D8BC12970731C0072A5DF /* SearchView.swift in Sources */,
+				F3D3AECF297812D200372A31 /* PhotoGrid.swift in Sources */,
 				F31D8BC32970733D0072A5DF /* SearchViewModel.swift in Sources */,
+				F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */,
 				F3D3AEC92976A88D00372A31 /* SearchRowModel.swift in Sources */,
 				F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */,
 				F31D8BCC297192550072A5DF /* Request.swift in Sources */,

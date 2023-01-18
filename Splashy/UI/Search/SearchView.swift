@@ -3,15 +3,13 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject private(set) var viewModel: ViewModel
-    
+
     var body: some View {
         NavigationStack {
-            List(viewModel.searchResults) {
-                SearchRow(viewModel: .init(photo: $0))
-            }
-            .navigationTitle("Splashy")
+            PhotoGrid(photos: viewModel.searchResults, numColumns: 3)
+                .navigationTitle("Splashy")
+                .searchable(text: $viewModel.searchTerm)
         }
-        .searchable(text: $viewModel.searchTerm)
     }
 }
 

@@ -3,8 +3,12 @@ import SwiftUI
 
 struct SearchRow: View {
     let viewModel: ViewModel
+    
     var body: some View {
-        AsyncImage(url: viewModel.url)
-            .frame(width: 200, height: 200)
+        PhotoImage(url: viewModel.url)
+            .background(.white)
+            .frame(maxWidth: .infinity)
+            .aspectRatio(1, contentMode: .fit)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
