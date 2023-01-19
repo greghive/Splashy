@@ -27,7 +27,7 @@ fileprivate extension Publisher where Output == URLSession.DataTaskPublisher.Out
             guard let statusCode = (result.response as? HTTPURLResponse)?.statusCode else {
                 throw APIError.unexpectedResponse
             }
-            guard (200 ..< 300).contains(statusCode) else {
+            guard (200...299).contains(statusCode) else {
                 throw APIError.failure(statusCode: statusCode)
             }
             return result.data

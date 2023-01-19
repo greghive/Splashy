@@ -10,20 +10,30 @@ extension SearchView {
         enum State {
             case idle
             case success([Photo])
-            case error(String)
+            case failure(String)
         }
         
         init() {
             $searchTerm
+                .dropFirst()
                 .debounce(for: .seconds(0.3), scheduler: DispatchQueue.global())
-                .map { unsplash.call(.searchPhotos(query: $0, perPage: 21))
-                    .map(\SearchResponse.results)
-                    .map { .success($0) }
-                }
+                .map(searchPhotos)
                 .switchToLatest()
-                .mapError { $0 } // TODO: map to Unsplash domain error from APIError
-                .catch { Just(.error($0.localizedDescription)) }
+                .catch(errorHandler)
                 .assign(to: &$searchState)
+        }
+        
+        private func searchPhotos(string: String) -> AnyPublisher<State, Error> {
+            unsplash.call(.searchPhotos(query: string, perPage: 21))
+                .map(\SearchResponse.results)
+                .map { .success($0) }
+                .eraseToAnyPublisher()
+        }
+        
+        private func errorHandler(error: Error) -> AnyPublisher<State, Never> {
+            Just(.failure(error.message))
+                .eraseToAnyPublisher()
         }
     }
 }
+

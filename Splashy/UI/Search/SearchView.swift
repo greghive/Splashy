@@ -21,8 +21,10 @@ struct SearchView: View {
         case .success(let photos):
             PhotoGrid(photos: photos, numColumns: 3)
         
-        case .error(_):
-            EmptyView()
+        case .failure(let message):
+            Text(message)
+                .multilineTextAlignment(.center)
+                .padding()
         }
     }
 }
