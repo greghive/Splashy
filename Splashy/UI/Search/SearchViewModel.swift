@@ -16,7 +16,7 @@ extension SearchView {
         init() {
             $searchTerm
                 .dropFirst()
-                .debounce(for: .seconds(0.3), scheduler: DispatchQueue.global())
+                .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
                 .map(searchPhotos)
                 .switchToLatest()
                 .catch(errorHandler)
