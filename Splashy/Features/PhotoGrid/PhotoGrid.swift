@@ -12,7 +12,7 @@ struct PhotoGrid: View {
         ScrollView {
             LazyVGrid(columns: columms, spacing: spacing, content: {
                 ForEach(photos) {
-                    SearchRow(viewModel: .init(photo: $0))
+                    PhotoCell(model: .init(photo: $0))
                 }
             })
             .padding(spacing)

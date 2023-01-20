@@ -2,7 +2,7 @@
 import XCTest
 @testable import Splashy
 
-final class SearchRowModelTests: XCTestCase {
+final class PhotoCellModelTests: XCTestCase {
     
     func test_url() {
         let photo = Photo(id: "a", urls: .init(
@@ -12,7 +12,7 @@ final class SearchRowModelTests: XCTestCase {
             small: "images/small.jpg",
             thumb: "images/thumb.jpg")
         )
-        let sut = SearchRow.ViewModel(photo: photo)
+        let sut = PhotoCellModel(photo: photo)
         XCTAssertEqual(sut.url, URL(string: "images/thumb.jpg"))
     }
 }

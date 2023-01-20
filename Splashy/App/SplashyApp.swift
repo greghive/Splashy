@@ -8,7 +8,7 @@ import SwiftUI
 struct SplashyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PhotoSearchView(model: .init())
         }
     }
 }
