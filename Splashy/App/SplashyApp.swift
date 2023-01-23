@@ -1,7 +1,6 @@
 
 import SwiftUI
 
-//TODO: Add TabBar to root
 //TODO: FavsView
 //TODO: Favs persistence
 //TODO: Toggle fav status from detail screen
@@ -10,7 +9,7 @@ import SwiftUI
 struct SplashyApp: App {
     var body: some Scene {
         WindowGroup {
-            PhotoSearchView(model: .init())
+            AppView(model: .init())
         }
     }
 }

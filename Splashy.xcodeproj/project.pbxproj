@@ -20,6 +20,8 @@
 		F39E14D72979D6EE00B7931E /* UnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D62979D6ED00B7931E /* UnsplashError.swift */; };
 		F39E14DA2979E19F00B7931E /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D92979E19F00B7931E /* PhotoDetail.swift */; };
 		F39E14DF297EA48500B7931E /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14DE297EA48500B7931E /* UserImage.swift */; };
+		F39E14E2297EC55700B7931E /* PhotoFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14E1297EC55700B7931E /* PhotoFavs.swift */; };
+		F39E14E5297ECA4F00B7931E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14E4297ECA4F00B7931E /* App.swift */; };
 		F3D3AEC72976A7F700372A31 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC62976A7F700372A31 /* PhotoCell.swift */; };
 		F3D3AECB2976AB8400372A31 /* PhotoCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */; };
 		F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECC2976E90A00372A31 /* PhotoImage.swift */; };
@@ -60,6 +62,8 @@
 		F39E14D62979D6ED00B7931E /* UnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashError.swift; sourceTree = "<group>"; };
 		F39E14D92979E19F00B7931E /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
 		F39E14DE297EA48500B7931E /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		F39E14E1297EC55700B7931E /* PhotoFavs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFavs.swift; sourceTree = "<group>"; };
+		F39E14E4297ECA4F00B7931E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F3D3AEC62976A7F700372A31 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellModelTests.swift; sourceTree = "<group>"; };
 		F3D3AECC2976E90A00372A31 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
@@ -160,9 +164,11 @@
 		F31D8BBE29706D7C0072A5DF /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F39E14E3297ECA3100B7931E /* App */,
 				F31D8BC4297073500072A5DF /* PhotoSearch */,
 				F31D8BC5297073640072A5DF /* PhotoGrid */,
 				F39E14D82979E18500B7931E /* PhotoDetail */,
+				F39E14E0297EC53100B7931E /* PhotoFavs */,
 				F39E14DD297ADE7D00B7931E /* Components */,
 			);
 			path = Features;
@@ -227,6 +233,22 @@
 				F39E14DE297EA48500B7931E /* UserImage.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F39E14E0297EC53100B7931E /* PhotoFavs */ = {
+			isa = PBXGroup;
+			children = (
+				F39E14E1297EC55700B7931E /* PhotoFavs.swift */,
+			);
+			path = PhotoFavs;
+			sourceTree = "<group>";
+		};
+		F39E14E3297ECA3100B7931E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F39E14E4297ECA4F00B7931E /* App.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,8 +386,10 @@
 				F31D8BC12970731C0072A5DF /* PhotoSearch.swift in Sources */,
 				F3D3AECF297812D200372A31 /* PhotoGrid.swift in Sources */,
 				F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */,
+				F39E14E5297ECA4F00B7931E /* App.swift in Sources */,
 				F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */,
 				F39E14DF297EA48500B7931E /* UserImage.swift in Sources */,
+				F39E14E2297EC55700B7931E /* PhotoFavs.swift in Sources */,
 				F31D8BCC297192550072A5DF /* Request.swift in Sources */,
 				F3D3AEC72976A7F700372A31 /* PhotoCell.swift in Sources */,
 				F31D8B94297063940072A5DF /* SplashyApp.swift in Sources */,
