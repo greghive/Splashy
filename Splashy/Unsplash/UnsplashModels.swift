@@ -5,7 +5,9 @@ struct SearchResponse: Decodable {
 
 struct Photo: Hashable, Decodable, Identifiable {
     let id: String
+    let description: String?
     let urls: PhotoUrls
+    let user: User
 }
 
 extension Photo: Equatable {
@@ -26,4 +28,16 @@ extension PhotoUrls: Equatable {
     static func == (lhs: PhotoUrls, rhs: PhotoUrls) -> Bool {
         lhs.raw == rhs.raw
     }
+}
+
+struct User: Decodable, Hashable {
+    let id: String
+    let name: String
+    let profileImage: ProfileImage
+}
+
+struct ProfileImage: Decodable, Hashable {
+    let small: String
+    let medium: String
+    let large: String
 }

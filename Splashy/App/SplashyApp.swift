@@ -1,7 +1,6 @@
 
 import SwiftUI
 
-//TODO: PhotoView (detail screen)
 //TODO: Add TabBar to root
 //TODO: FavsView
 //TODO: Favs persistence

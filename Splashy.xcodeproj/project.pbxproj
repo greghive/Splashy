@@ -16,10 +16,10 @@
 		F31D8BC8297097BA0072A5DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BC7297097BA0072A5DF /* API.swift */; };
 		F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BC9297176A80072A5DF /* UnsplashAPI.swift */; };
 		F31D8BCC297192550072A5DF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BCB297192550072A5DF /* Request.swift */; };
-		F31D8BCE29719BA60072A5DF /* SplashyAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BCD29719BA60072A5DF /* SplashyAppState.swift */; };
 		F31D8BD12971B0CC0072A5DF /* UnsplashModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D8BD02971B0CC0072A5DF /* UnsplashModels.swift */; };
 		F39E14D72979D6EE00B7931E /* UnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D62979D6ED00B7931E /* UnsplashError.swift */; };
 		F39E14DA2979E19F00B7931E /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D92979E19F00B7931E /* PhotoDetail.swift */; };
+		F39E14DF297EA48500B7931E /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14DE297EA48500B7931E /* UserImage.swift */; };
 		F3D3AEC72976A7F700372A31 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC62976A7F700372A31 /* PhotoCell.swift */; };
 		F3D3AECB2976AB8400372A31 /* PhotoCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */; };
 		F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECC2976E90A00372A31 /* PhotoImage.swift */; };
@@ -56,10 +56,10 @@
 		F31D8BC7297097BA0072A5DF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F31D8BC9297176A80072A5DF /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		F31D8BCB297192550072A5DF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		F31D8BCD29719BA60072A5DF /* SplashyAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashyAppState.swift; sourceTree = "<group>"; };
 		F31D8BD02971B0CC0072A5DF /* UnsplashModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashModels.swift; sourceTree = "<group>"; };
 		F39E14D62979D6ED00B7931E /* UnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashError.swift; sourceTree = "<group>"; };
 		F39E14D92979E19F00B7931E /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
+		F39E14DE297EA48500B7931E /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		F3D3AEC62976A7F700372A31 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellModelTests.swift; sourceTree = "<group>"; };
 		F3D3AECC2976E90A00372A31 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				F31D8B93297063940072A5DF /* SplashyApp.swift */,
-				F31D8BCD29719BA60072A5DF /* SplashyAppState.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -225,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D3AECC2976E90A00372A31 /* PhotoImage.swift */,
+				F39E14DE297EA48500B7931E /* UserImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -365,10 +365,10 @@
 				F3D3AECF297812D200372A31 /* PhotoGrid.swift in Sources */,
 				F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */,
 				F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */,
+				F39E14DF297EA48500B7931E /* UserImage.swift in Sources */,
 				F31D8BCC297192550072A5DF /* Request.swift in Sources */,
 				F3D3AEC72976A7F700372A31 /* PhotoCell.swift in Sources */,
 				F31D8B94297063940072A5DF /* SplashyApp.swift in Sources */,
-				F31D8BCE29719BA60072A5DF /* SplashyAppState.swift in Sources */,
 				F39E14DA2979E19F00B7931E /* PhotoDetail.swift in Sources */,
 				F31D8BC8297097BA0072A5DF /* API.swift in Sources */,
 			);
