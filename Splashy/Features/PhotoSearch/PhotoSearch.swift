@@ -7,6 +7,7 @@ import Combine
 final class PhotoSearchModel: ObservableObject {
     @Published var searchTerm = ""
     @Published var searchState = SearchState.idle
+    @Published var selectedPhoto: Photo?
     
     enum SearchState {
         case idle
@@ -20,7 +21,7 @@ final class PhotoSearchModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
             .map(searchPhotos)
             .switchToLatest()
-            .catch(errorHandler)
+            .catch(handleError)
             .assign(to: &$searchState)
     }
     
@@ -31,7 +32,7 @@ final class PhotoSearchModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private func errorHandler(error: Error) -> AnyPublisher<SearchState, Never> {
+    private func handleError(error: Error) -> AnyPublisher<SearchState, Never> {
         Just(.failure(error.message))
             .eraseToAnyPublisher()
     }
@@ -57,8 +58,13 @@ struct PhotoSearchView: View {
             EmptyView()
         
         case .success(let photos):
-            PhotoGrid(photos: photos, numColumns: 3)
-        
+            PhotoGrid(photos: photos, numColumns: 3) {
+                model.selectedPhoto = $0
+            }
+            .sheet(item: $model.selectedPhoto) {
+                PhotoDetailView(model: .init(photo: $0))
+            }
+            
         case .failure(let message):
             Text(message)
                 .multilineTextAlignment(.center)

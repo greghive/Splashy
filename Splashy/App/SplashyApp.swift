@@ -2,7 +2,10 @@
 import SwiftUI
 
 //TODO: PhotoView (detail screen)
-//TODO: Navigation from SearchView to PhotoView
+//TODO: Add TabBar to root
+//TODO: FavsView
+//TODO: Favs persistence
+//TODO: Toggle fav status from detail screen
 
 @main
 struct SplashyApp: App {

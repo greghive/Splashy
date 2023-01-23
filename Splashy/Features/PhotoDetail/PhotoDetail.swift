@@ -18,13 +18,7 @@ struct PhotoDetailView: View {
     var body: some View {
         PhotoImage(url: model.url)
             .background(.white)
-            .frame(maxWidth: .infinity)
-            .aspectRatio(1, contentMode: .fit)
+            .ignoresSafeArea()
+            .aspectRatio(1, contentMode: .fill)
     }
 }
-
-//struct PhotoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PhotoView()
-//    }
-//}

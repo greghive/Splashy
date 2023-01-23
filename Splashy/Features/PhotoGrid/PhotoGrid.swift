@@ -4,6 +4,7 @@ import SwiftUI
 struct PhotoGrid: View {
     let photos: [Photo]
     let numColumns: Int
+    var selection: (Photo) -> Void 
     
     var body: some View {
         let spacing: CGFloat = 10
@@ -11,8 +12,12 @@ struct PhotoGrid: View {
         
         ScrollView {
             LazyVGrid(columns: columms, spacing: spacing, content: {
-                ForEach(photos) {
-                    PhotoCell(model: .init(photo: $0))
+                ForEach(photos) { photo in
+                    Button {
+                        selection(photo)
+                    } label: {
+                        PhotoCell(model: .init(photo: photo))
+                    }
                 }
             })
             .padding(spacing)
@@ -23,6 +28,6 @@ struct PhotoGrid: View {
 
 struct PhotoGrid_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoGrid(photos: [], numColumns: 2)
+        PhotoGrid(photos: [], numColumns: 2, selection: { _ in })
     }
 }
