@@ -1,32 +1,8 @@
 
 import SwiftUI
 
-//MARK: - Model
-
-struct PhotoDetailModel {
-    let photo: Photo
-
-    var photoUrl: URL? {
-        URL(string: photo.urls.full)
-    }
-    
-    var profileUrl: URL? {
-        URL(string: photo.user.profileImage.medium)
-    }
-    
-    var username: String {
-        photo.user.name
-    }
-    
-    var description: String {
-        photo.description ?? "This image has no description"
-    }
-}
-
-//MARK: - View
-
-struct PhotoDetailView: View {
-    let model: PhotoDetailModel
+struct DetailView: View {
+    let model: DetailModel
     @ObservedObject var favs: PhotoStore
     
     var body: some View {
@@ -40,7 +16,7 @@ struct PhotoDetailView: View {
 //MARK: - View Components
 
 struct PhotoCard: View {
-    let model: PhotoDetailModel
+    let model: DetailModel
     @ObservedObject var favs: PhotoStore
     
     var body: some View {
@@ -59,7 +35,7 @@ struct PhotoCard: View {
 }
 
 struct PhotoText: View {
-    let model: PhotoDetailModel
+    let model: DetailModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -76,7 +52,7 @@ struct PhotoText: View {
 }
 
 struct FavsButton: View {
-    let model: PhotoDetailModel
+    let model: DetailModel
     @ObservedObject var favs: PhotoStore
     
     var body: some View {

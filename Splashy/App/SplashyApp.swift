@@ -1,7 +1,8 @@
 
 import SwiftUI
 
-//TODO: Rename folders and files (again!)
+//TODO: Empty state label for favs
+//TODO: Improve previews with static data
 
 @main
 struct SplashyApp: App {
