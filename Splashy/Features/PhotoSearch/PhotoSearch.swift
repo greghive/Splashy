@@ -8,6 +8,7 @@ final class PhotoSearchModel: ObservableObject {
     @Published var searchTerm = ""
     @Published var searchState = SearchState.idle
     @Published var selectedPhoto: Photo?
+    @Published var favs: PhotoStore
     
     enum SearchState {
         case idle
@@ -15,7 +16,9 @@ final class PhotoSearchModel: ObservableObject {
         case failure(String)
     }
     
-    init() {
+    init(favs: PhotoStore) {
+        self.favs = favs
+        
         $searchTerm
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
@@ -62,7 +65,7 @@ struct PhotoSearchView: View {
                 model.selectedPhoto = $0
             }
             .sheet(item: $model.selectedPhoto) {
-                PhotoDetailView(model: .init(photo: $0))
+                PhotoDetailView(model: PhotoDetailModel(photo: $0), favs: model.favs)
             }
             
         case .failure(let message):
@@ -75,7 +78,7 @@ struct PhotoSearchView: View {
 
 struct PhotoSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoSearchView(model: .init())
+        PhotoSearchView(model: PhotoSearchModel(favs: PhotoStore()))
     }
 }
 

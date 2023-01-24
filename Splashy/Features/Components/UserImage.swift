@@ -10,7 +10,6 @@ struct UserImage: View {
         } placeholder: {
             Image(systemName: "person")
         }
-        .frame(width: 30, height: 30)
         .background(.gray)
         .foregroundColor(.white)
         .clipShape(Circle())

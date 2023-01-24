@@ -1,20 +1,29 @@
 
 import SwiftUI
 
-final class PhotoFavsModel: ObservableObject{
-    
-}
+//MARK: - Model
 
-struct PhotoFavsView: View {
-    let model: PhotoFavsModel
+final class PhotoFavsModel: ObservableObject {
+    @Published var favs: PhotoStore
+    @Published var selectedPhoto: Photo?
     
-    var body: some View {
-        Text("Hello, Favs!")
+    init(favs: PhotoStore) {
+        self.favs = favs
+        self.selectedPhoto = nil
     }
 }
 
-struct PhotoFavsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PhotoFavsView(model: .init())
+//MARK: - View
+
+struct PhotoFavsView: View {
+    @ObservedObject private(set) var model: PhotoFavsModel
+
+    var body: some View {
+        PhotoGrid(photos: model.favs.photos, numColumns: 3) {
+            model.selectedPhoto = $0
+        }
+        .sheet(item: $model.selectedPhoto) {
+            PhotoDetailView(model: PhotoDetailModel(photo: $0), favs: model.favs)
+        }
     }
 }

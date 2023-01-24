@@ -1,9 +1,9 @@
 
-struct SearchResponse: Decodable {
+struct SearchResponse: Codable {
     let results: [Photo]
 }
 
-struct Photo: Hashable, Decodable, Identifiable {
+struct Photo: Hashable, Codable, Identifiable {
     let id: String
     let description: String?
     let urls: PhotoUrls
@@ -16,7 +16,7 @@ extension Photo: Equatable {
     }
 }
 
-struct PhotoUrls: Hashable, Decodable {
+struct PhotoUrls: Hashable, Codable {
     let raw: String
     let full: String
     let regular: String
@@ -30,13 +30,13 @@ extension PhotoUrls: Equatable {
     }
 }
 
-struct User: Decodable, Hashable {
+struct User: Codable, Hashable {
     let id: String
     let name: String
     let profileImage: ProfileImage
 }
 
-struct ProfileImage: Decodable, Hashable {
+struct ProfileImage: Codable, Hashable {
     let small: String
     let medium: String
     let large: String
