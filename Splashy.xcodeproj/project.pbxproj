@@ -30,6 +30,7 @@
 		F39E14F329807E6200B7931E /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14F229807E6200B7931E /* SearchModel.swift */; };
 		F39E14F529807F1D00B7931E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14F429807F1D00B7931E /* DetailView.swift */; };
 		F39E14F729807F7000B7931E /* FavsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14F629807F7000B7931E /* FavsView.swift */; };
+		F3BA18952981701600BE0147 /* MessageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA18942981701600BE0147 /* MessageText.swift */; };
 		F3D3AEC72976A7F700372A31 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AEC62976A7F700372A31 /* PhotoCell.swift */; };
 		F3D3AECB2976AB8400372A31 /* PhotoCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */; };
 		F3D3AECD2976E90A00372A31 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3AECC2976E90A00372A31 /* PhotoImage.swift */; };
@@ -80,6 +81,7 @@
 		F39E14F229807E6200B7931E /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		F39E14F429807F1D00B7931E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F39E14F629807F7000B7931E /* FavsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsView.swift; sourceTree = "<group>"; };
+		F3BA18942981701600BE0147 /* MessageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageText.swift; sourceTree = "<group>"; };
 		F3D3AEC62976A7F700372A31 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F3D3AECA2976AB8400372A31 /* PhotoCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellModelTests.swift; sourceTree = "<group>"; };
 		F3D3AECC2976E90A00372A31 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				F3D3AEC62976A7F700372A31 /* PhotoCell.swift */,
 				F3D3AECC2976E90A00372A31 /* PhotoImage.swift */,
 				F39E14DE297EA48500B7931E /* UserImage.swift */,
+				F3BA18942981701600BE0147 /* MessageText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				F39E14F729807F7000B7931E /* FavsView.swift in Sources */,
 				F39E14E7297FE81500B7931E /* PhotoStore.swift in Sources */,
 				F39E14E5297ECA4F00B7931E /* AppView.swift in Sources */,
+				F3BA18952981701600BE0147 /* MessageText.swift in Sources */,
 				F31D8BCA297176A80072A5DF /* UnsplashAPI.swift in Sources */,
 				F39E14DF297EA48500B7931E /* UserImage.swift in Sources */,
 				F39E14F529807F1D00B7931E /* DetailView.swift in Sources */,

@@ -27,14 +27,12 @@ struct SearchView: View {
             }
             
         case .failure(let message):
-            Text(message)
-                .multilineTextAlignment(.center)
-                .padding()
+            MessageText(message: message)
         }
     }
 }
 
-struct PhotoSearchView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(model: SearchModel(favs: PhotoStore(cacheKey: "preview_favs")))
     }

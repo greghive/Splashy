@@ -5,6 +5,7 @@ import SwiftUI
 
 struct PhotoCellModel {
     let photo: Photo
+    
     var url: URL? {
         URL(string: photo.urls.thumb)
     }
@@ -14,6 +15,7 @@ struct PhotoCellModel {
 
 struct PhotoCell: View {
     let model: PhotoCellModel
+    
     var body: some View {
         PhotoImage(url: model.url)
             .background(.white)
