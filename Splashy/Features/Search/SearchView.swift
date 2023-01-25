@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject private(set) var model: SearchModel
+    @StateObject var model: SearchModel
 
     var body: some View {
         NavigationStack {
