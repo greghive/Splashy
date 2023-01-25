@@ -1,7 +1,6 @@
 
 import SwiftUI
 
-//TODO: Empty state label for favs
 //TODO: Improve previews with static data
 
 @main

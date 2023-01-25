@@ -18,6 +18,12 @@ let unsplashDecoder: JSONDecoder = {
     return decoder
 }()
 
+let unsplashEncoder: JSONEncoder = {
+    let encoder = JSONEncoder()
+    encoder.keyEncodingStrategy = .convertToSnakeCase
+    return encoder
+}()
+
 //MARK: Unsplash Requests
 
 extension Request {

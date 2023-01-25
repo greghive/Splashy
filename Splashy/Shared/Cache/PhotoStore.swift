@@ -12,7 +12,7 @@ final class PhotoStore: ObservableObject {
         self.cacheKey = cacheKey
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let disk = FileStorage(url: paths[0])
-        self.storage = CodableStorage(storage: disk)
+        self.storage = CodableStorage(storage: disk, decoder: unsplashDecoder, encoder: unsplashEncoder)
         self.photos = readFromDisk()
     }
     
