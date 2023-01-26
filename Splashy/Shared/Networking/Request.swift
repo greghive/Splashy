@@ -23,7 +23,8 @@ extension Request {
         components.scheme = scheme
         components.host = host
         components.path = path
-        components.queryItems = queries?.map { URLQueryItem(name: $0.key, value: $0.value) }
+        components.queryItems = queries?
+            .map { URLQueryItem(name: $0.key, value: $0.value) }
        
         guard let url = components.url else {
             throw APIError.invalidUrl
