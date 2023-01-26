@@ -34,7 +34,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(model: SearchModel(favs: PhotoStore(cacheKey: "preview_favs")))
+        SearchView(model: SearchModel(favs: .preview))
     }
 }
 

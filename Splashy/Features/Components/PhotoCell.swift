@@ -25,3 +25,10 @@ struct PhotoCell: View {
     }
 }
 
+struct PhotoCell_Previews: PreviewProvider {
+    static var previews: some View {
+        PhotoCell(model: PhotoCellModel(photo: .preview(url: "https://bit.ly/3Jc26Ks")))
+            .previewLayout(.sizeThatFits)
+    }
+}
+

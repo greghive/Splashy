@@ -21,4 +21,8 @@ struct DetailModel {
     }
 }
 
-
+extension DetailModel {
+    static var preview: DetailModel {
+        DetailModel(photo: Photo.preview(url: "https://bit.ly/3Jc26Ks"))
+    }
+}

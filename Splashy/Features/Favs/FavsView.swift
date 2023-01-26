@@ -27,6 +27,9 @@ struct FavsView: View {
 
 struct FavsView_Previews: PreviewProvider {
     static var previews: some View {
-        FavsView(model: FavsModel(favs: PhotoStore(cacheKey: "preview_favs")))
+        FavsView(model: FavsModel(favs: .preview))
+            .previewDisplayName("Favs Data")
+        FavsView(model: FavsModel(favs: .empty))
+            .previewDisplayName("Favs Empty")
     }
 }

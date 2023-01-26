@@ -30,3 +30,10 @@ struct PhotoImage: View {
         }
     }
 }
+
+struct PhotoImage_Previews: PreviewProvider {
+    static var previews: some View {
+        PhotoImage(url: URL(string: "https://bit.ly/3Jc26Ks"))
+            .previewLayout(.sizeThatFits)
+    }
+}

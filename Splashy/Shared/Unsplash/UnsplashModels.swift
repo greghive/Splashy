@@ -1,7 +1,11 @@
 
+//MARK: - Search API Response
+
 struct SearchResponse: Codable {
     let results: [Photo]
 }
+
+//MARK: - Photo API Model
 
 struct Photo: Hashable, Codable, Identifiable {
     let id: String
@@ -16,6 +20,15 @@ extension Photo: Equatable {
     }
 }
 
+import Foundation
+extension Photo {
+    var url: URL? {
+        URL(string: urls.full)
+    }
+}
+
+//MARK: - Photo URLs API Model
+
 struct PhotoUrls: Hashable, Codable {
     let raw: String
     let full: String
@@ -29,6 +42,8 @@ extension PhotoUrls: Equatable {
         lhs.raw == rhs.raw
     }
 }
+
+//MARK: - User API Model
 
 struct User: Codable, Hashable {
     let id: String

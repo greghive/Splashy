@@ -52,3 +52,19 @@ final class PhotoStore: ObservableObject {
         try? storage.write(photos, for: cacheKey)
     }
 }
+
+extension PhotoStore {
+    static var preview: PhotoStore {
+        let store = PhotoStore(cacheKey: "photo_store_preview")
+        store.photos = [
+            .preview(url: "https://bit.ly/3Jc26Ks"),
+            .preview(url: "https://bit.ly/3Jc26Ks"),
+            .preview(url: "https://bit.ly/3Jc26Ks")
+        ]
+        return store
+    }
+    
+    static var empty: PhotoStore {
+        PhotoStore(cacheKey: UUID().uuidString)
+    }
+}
