@@ -28,6 +28,11 @@ final class PhotoStore: ObservableObject {
         }
     }
     
+    func clear() {
+        photos = []
+        writeToDisk()
+    }
+    
     private func add(_ photo: Photo) {
         photos.append(photo)
         writeToDisk()
