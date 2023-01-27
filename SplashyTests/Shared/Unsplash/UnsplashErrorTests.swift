@@ -29,4 +29,23 @@ final class UnsplashErrorTests: XCTestCase {
         XCTAssertEqual(err2, .unexpectedResponse)
         XCTAssertEqual(err3, .init(statusCode: 501))
     }
+    
+    func test_description() {
+        let err1: UnsplashError = .invalidUrl
+        let err2: UnsplashError = .unexpectedResponse
+        let err3: UnsplashError = .badRequest
+        let err4: UnsplashError = .unauthorized
+        let err5: UnsplashError = .forbidden
+        let err6: UnsplashError = .notFound
+        let err7: UnsplashError = .serverError
+        let err8: UnsplashError = .unknown
+        XCTAssertEqual(err1.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err2.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err3.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err4.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err5.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err6.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err7.description, "There was an issue with Unsplash. Please try again.")
+        XCTAssertEqual(err8.description, "There was an issue with Unsplash. Please try again.")
+    }
 }
