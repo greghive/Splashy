@@ -2,7 +2,7 @@
 import XCTest
 @testable import Splashy
 
-final class UnsplashAPI_Tests: XCTestCase {
+final class UnsplashAPITests: XCTestCase {
 
     func test_unsplashDecoder_convertsFromSnakeCase() throws {
         let json = ["some_key": "value"]

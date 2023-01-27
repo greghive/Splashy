@@ -33,7 +33,7 @@ extension UnsplashError {
         case .invalidUrl:
             self = .invalidUrl
         case .unexpectedResponse:
-            self = .invalidUrl
+            self = .unexpectedResponse
         case .failure(let statusCode):
             self = .init(statusCode: statusCode)
         }

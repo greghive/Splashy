@@ -2,7 +2,7 @@
 import XCTest
 @testable import Splashy
 
-final class Request_Tests: XCTestCase {
+final class RequestTests: XCTestCase {
     
     func test_build_request_url() throws {
         XCTAssertEqual(try request(.get).build().url, URL(string: "https://awesome.com/get/stuff"))
