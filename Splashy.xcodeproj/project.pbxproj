@@ -20,6 +20,7 @@
 		F3987B792984517C00A8582D /* UnsplashAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3987B782984517C00A8582D /* UnsplashAPITests.swift */; };
 		F3987B7B298456B400A8582D /* UnsplashErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3987B7A298456B400A8582D /* UnsplashErrorTests.swift */; };
 		F3987B7E29846DF400A8582D /* PhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3987B7D29846DF400A8582D /* PhotoStoreTests.swift */; };
+		F3987B812984741600A8582D /* SearchModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3987B802984741600A8582D /* SearchModelTests.swift */; };
 		F39E14D72979D6EE00B7931E /* UnsplashError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D62979D6ED00B7931E /* UnsplashError.swift */; };
 		F39E14DA2979E19F00B7931E /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14D92979E19F00B7931E /* DetailModel.swift */; };
 		F39E14DF297EA48500B7931E /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E14DE297EA48500B7931E /* UserImage.swift */; };
@@ -76,6 +77,7 @@
 		F3987B782984517C00A8582D /* UnsplashAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPITests.swift; sourceTree = "<group>"; };
 		F3987B7A298456B400A8582D /* UnsplashErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashErrorTests.swift; sourceTree = "<group>"; };
 		F3987B7D29846DF400A8582D /* PhotoStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStoreTests.swift; sourceTree = "<group>"; };
+		F3987B802984741600A8582D /* SearchModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelTests.swift; sourceTree = "<group>"; };
 		F39E14D62979D6ED00B7931E /* UnsplashError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashError.swift; sourceTree = "<group>"; };
 		F39E14D92979E19F00B7931E /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		F39E14DE297EA48500B7931E /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		F3987B7F298473FF00A8582D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F3987B802984741600A8582D /* SearchModelTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		F39E14D82979E18500B7931E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +328,7 @@
 		F3A4376D2982C9BF003F0AF4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F3987B7F298473FF00A8582D /* Search */,
 				F3A4376E2982C9C8003F0AF4 /* Components */,
 			);
 			path = Features;
@@ -511,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D3AECB2976AB8400372A31 /* PhotoCellModelTests.swift in Sources */,
+				F3987B812984741600A8582D /* SearchModelTests.swift in Sources */,
 				F3987B7E29846DF400A8582D /* PhotoStoreTests.swift in Sources */,
 				F3A437722982CA48003F0AF4 /* RequestTests.swift in Sources */,
 				F3987B7B298456B400A8582D /* UnsplashErrorTests.swift in Sources */,

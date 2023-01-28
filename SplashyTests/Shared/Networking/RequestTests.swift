@@ -8,7 +8,7 @@ final class RequestTests: XCTestCase {
         XCTAssertEqual(try request(.get).build().url, URL(string: "https://awesome.com/get/stuff"))
     }
     
-    func test_build_throwsInvalidUrl() {
+    func test_build_throwsInvalidUrl() throws {
         let badRequest = Request(
             scheme: "https",
             host: "awesomecom",
@@ -18,10 +18,7 @@ final class RequestTests: XCTestCase {
             queries: nil,
             body: nil
         )
-        do {
-            let _ = try badRequest.build()
-            XCTFail("No error thrown for invalid URL")
-        } catch { }
+        XCTAssertThrowsError(try badRequest.build())
     }
     
     func test_build_request_url_queries() throws {
