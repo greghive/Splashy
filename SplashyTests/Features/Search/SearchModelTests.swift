@@ -23,18 +23,3 @@ final class SearchModelTests: XCTestCase {
         XCTFail()
     }
 }
-
-extension SearchModel.SearchState: Equatable {
-    public static func == (lhs: SearchModel.SearchState, rhs: SearchModel.SearchState) ->Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle):
-            return true
-        case let (.success(a), .success(b)):
-            return a == b
-        case let (.failure(a), .failure(b)):
-            return a == b
-        default:
-            return false
-        }
-    }
-}

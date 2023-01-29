@@ -27,18 +27,7 @@ struct PhotoGrid: View {
 }
 
 struct PhotoGrid_Previews: PreviewProvider {
-    static let urls = [
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks",
-        "https://bit.ly/3Jc26Ks"
-    ]
-    
     static var previews: some View {
-        PhotoGrid(photos: Photo.previews(urls: urls), numColumns: 3, selection: { _ in })
+        PhotoGrid(photos: Photo.mocks, numColumns: 3, selection: { _ in })
     }
 }
