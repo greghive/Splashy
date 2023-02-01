@@ -27,7 +27,7 @@ struct PhotoCell: View {
 
 struct PhotoCell_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCell(model: PhotoCellModel(photo: .mocks[0]))
+        PhotoCell(model: PhotoCellModel(photo: .stubs[0]))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -4,7 +4,7 @@ import Foundation
 
 enum SearchPhotosSuccessResponder: MockURLResponder {
     static func respond(to request: URLRequest) throws -> Data {
-        try unsplashEncoder.encode(SearchResponse.mock)
+        try unsplashEncoder.encode(SearchResponse.stub)
     }
 }
 

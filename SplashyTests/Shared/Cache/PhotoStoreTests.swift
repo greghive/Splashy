@@ -51,6 +51,11 @@ final class PhotoStoreTests: XCTestCase {
     }
     
     private func photo(id: String) -> Photo {
-        Photo(id: id, description: "", urls: .preview(url: ""), user: .preview)
+        Photo(
+            id: id,
+            description: "",
+            urls: .init(raw: "", full: "", regular: "", small: "", thumb: ""),
+            user: .init(id: "", name: "", profileImage: .init(small: "", medium: "", large: ""))
+        )
     }
 }

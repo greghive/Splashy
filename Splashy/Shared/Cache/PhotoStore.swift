@@ -61,7 +61,7 @@ final class PhotoStore: ObservableObject {
 extension PhotoStore {
     static var preview: PhotoStore {
         let store = PhotoStore(cacheKey: "photo_store_preview")
-        store.photos = Photo.mocks
+        store.photos = Photo.stubs
         return store
     }
     

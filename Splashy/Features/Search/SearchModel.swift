@@ -3,6 +3,7 @@ import Combine
 import Foundation
 
 final class SearchModel: ObservableObject {
+    private let api: API
     @Published var searchTerm = ""
     @Published var searchState = SearchState.idle
     @Published var selectedPhoto: Photo?
@@ -14,11 +15,12 @@ final class SearchModel: ObservableObject {
         case failure(String)
     }
     
-    init(favs: PhotoStore) {
+    init(api: API, favs: PhotoStore) {
+        self.api = api
         self.favs = favs
         
         $searchTerm
-            .dropFirst()
+            .filter { !$0.isEmpty }
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
             .map(searchPhotos)
             .switchToLatest()
@@ -27,7 +29,7 @@ final class SearchModel: ObservableObject {
     }
     
     private func searchPhotos(string: String) -> AnyPublisher<SearchState, Error> {
-        unsplash.call(.searchPhotos(query: string, perPage: 21))
+        api.call(.searchPhotos(query: string, perPage: 21))
             .map(\SearchResponse.results)
             .map { .success($0) }
             .eraseToAnyPublisher()

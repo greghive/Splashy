@@ -25,4 +25,6 @@ final class MockURLProtocol<Responder: MockURLResponder>: URLProtocol {
         }
         client.urlProtocolDidFinishLoading(self)
     }
+    
+    override func stopLoading() { }
 }

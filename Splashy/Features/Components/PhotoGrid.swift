@@ -28,6 +28,6 @@ struct PhotoGrid: View {
 
 struct PhotoGrid_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoGrid(photos: Photo.mocks, numColumns: 3, selection: { _ in })
+        PhotoGrid(photos: Photo.stubs, numColumns: 3, selection: { _ in })
     }
 }

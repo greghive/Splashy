@@ -23,6 +23,6 @@ struct DetailModel {
 
 extension DetailModel {
     static var preview: DetailModel {
-        DetailModel(photo: .mocks[0])
+        DetailModel(photo: .stubs[0])
     }
 }

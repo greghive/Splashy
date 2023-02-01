@@ -12,7 +12,7 @@ extension Bundle {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
-            fatalError("Failed to decode \(resource) as \(T.self). Errro: \(error)")
+            fatalError("Failed to decode \(resource) as \(T.self). Error: \(error)")
         }
     }
 }

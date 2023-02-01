@@ -34,7 +34,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(model: SearchModel(favs: .preview))
+        SearchView(model: SearchModel(api: unsplash, favs: .preview))
     }
 }
 

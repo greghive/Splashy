@@ -7,7 +7,7 @@ struct AppView: View {
     var body: some View {
         TabView(selection: $model.selectedTab) {
             
-            SearchView(model: SearchModel(favs: model.favs))
+            SearchView(model: SearchModel(api: unsplash, favs: model.favs))
                 .tabItem { Label("Search", systemImage: "magnifyingglass.circle.fill") }
                 .tag(AppModel.Tab.search)
             
