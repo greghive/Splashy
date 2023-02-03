@@ -2,6 +2,8 @@
 
 A SwiftUI project exploring design and architecture using Combine and the Unsplash API. Search for photos, view them full screen, and cache your favs to view later.
 
+![UI Screenshot](https://user-images.githubusercontent.com/10616345/216593527-824789e3-bfa5-4aed-bf02-5077ec565378.jpg)
+
 Through working on this simple demo, it was interesting to discover that MVVM is not a suitable architecture for SwiftUI apps, contrary to many samples and demos you will find. Rather, an MV style approach is much more satisfying. This app will be updated to further explore this in the coming days. For now, here is a list of some of the interesting things happening in this code base:
 
 - The `searchable` view modifier. Search bar UI in a single line of code. 😎
