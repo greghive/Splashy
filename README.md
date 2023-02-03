@@ -16,7 +16,7 @@ var body: some View {
 }
 ```
 
-- Republishing values emitted by the search request to the `@Published` search state property with internally managed subscription life cycle. Plus using `switchToLatest` to cancel debounced inflight search requests. 🤯  
+- Republishing values emitted by the search request to the `@Published` search state property using `assign(to:)` with internally managed subscription life cycle. Plus using `switchToLatest` to cancel debounced inflight search requests. 🤯  
 
 ```swift
 @Published var searchTerm = ""
@@ -93,6 +93,28 @@ struct API {
             return Fail(error: error)
                 .eraseToAnyPublisher()
         }
+    }
+}
+
+fileprivate extension Publisher where Output == URLSession.DataTaskPublisher.Output {
+    func tryData() -> AnyPublisher<Data, Error> {
+        tryMap { result in
+            guard let statusCode = (result.response as? HTTPURLResponse)?.statusCode else {
+                throw APIError.unexpectedResponse
+            }
+            guard (200...299).contains(statusCode) else {
+                throw APIError.failure(statusCode: statusCode)
+            }
+            return result.data
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func decodeData<T: Decodable>(decoder: JSONDecoder) -> AnyPublisher<T, Error> {
+        tryData()
+            .decode(type: T.self, decoder: decoder)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
 }
 ```
