@@ -52,3 +52,18 @@ final class SplashyModelTests: XCTestCase {
         return state
     }
 }
+
+extension SplashyModel.SearchState: Equatable {
+    public static func == (lhs: SplashyModel.SearchState, rhs: SplashyModel.SearchState) ->Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle):
+            return true
+        case let (.success(a), .success(b)):
+            return a == b
+        case let (.failure(a), .failure(b)):
+            return a == b
+        default:
+            return false
+        }
+    }
+}

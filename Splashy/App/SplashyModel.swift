@@ -46,38 +46,3 @@ final class SplashyModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 }
-
-struct PhotoModel {
-    let photo: Photo
-
-    var url: URL? {
-        URL(string: photo.urls.full)
-    }
-    
-    var profileUrl: URL? {
-        URL(string: photo.user.profileImage.medium)
-    }
-    
-    var username: String {
-        photo.user.name
-    }
-    
-    var description: String {
-        photo.description ?? "This image has no description"
-    }
-}
-
-extension SplashyModel.SearchState: Equatable {
-    public static func == (lhs: SplashyModel.SearchState, rhs: SplashyModel.SearchState) ->Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle):
-            return true
-        case let (.success(a), .success(b)):
-            return a == b
-        case let (.failure(a), .failure(b)):
-            return a == b
-        default:
-            return false
-        }
-    }
-}
