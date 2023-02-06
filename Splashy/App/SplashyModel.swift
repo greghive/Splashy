@@ -2,12 +2,7 @@
 import Combine
 import Foundation
 
-final class SearchModel: ObservableObject {
-    private let api: API
-    @Published var searchTerm = ""
-    @Published var searchState = SearchState.idle
-    @Published var selectedPhoto: Photo?
-    @Published var favs: PhotoStore
+final class SplashyModel: ObservableObject {
     
     enum SearchState {
         case idle
@@ -15,10 +10,21 @@ final class SearchModel: ObservableObject {
         case failure(String)
     }
     
-    init(api: API, favs: PhotoStore) {
-        self.api = api
-        self.favs = favs
+    private let api: API
+    @Published var searchTerm: String
+    @Published private(set) var searchState: SearchState
+    @Published var favs: PhotoStore
         
+    var hasFavs: Bool {
+        favs.photos.count > 0
+    }
+    
+    init(api: API = unsplash, favs: PhotoStore = PhotoStore(cacheKey: "favs")) {
+        self.api = api
+        self.searchTerm = ""
+        self.searchState = .idle
+        self.favs = favs
+                
         $searchTerm
             .filter { !$0.isEmpty }
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
@@ -41,8 +47,28 @@ final class SearchModel: ObservableObject {
     }
 }
 
-extension SearchModel.SearchState: Equatable {
-    public static func == (lhs: SearchModel.SearchState, rhs: SearchModel.SearchState) ->Bool {
+struct PhotoModel {
+    let photo: Photo
+
+    var url: URL? {
+        URL(string: photo.urls.full)
+    }
+    
+    var profileUrl: URL? {
+        URL(string: photo.user.profileImage.medium)
+    }
+    
+    var username: String {
+        photo.user.name
+    }
+    
+    var description: String {
+        photo.description ?? "This image has no description"
+    }
+}
+
+extension SplashyModel.SearchState: Equatable {
+    public static func == (lhs: SplashyModel.SearchState, rhs: SplashyModel.SearchState) ->Bool {
         switch (lhs, rhs) {
         case (.idle, .idle):
             return true

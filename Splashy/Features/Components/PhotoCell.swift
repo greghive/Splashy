@@ -1,23 +1,11 @@
 
 import SwiftUI
 
-//MARK: - Model
-
-struct PhotoCellModel {
+struct PhotoCell: View {
     let photo: Photo
     
-    var url: URL? {
-        URL(string: photo.urls.thumb)
-    }
-}
-
-//MARK: - View
-
-struct PhotoCell: View {
-    let model: PhotoCellModel
-    
     var body: some View {
-        PhotoImage(url: model.url)
+        PhotoImage(url: photo.url)
             .background(.white)
             .frame(maxWidth: .infinity)
             .aspectRatio(1, contentMode: .fit)
@@ -27,7 +15,7 @@ struct PhotoCell: View {
 
 struct PhotoCell_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoCell(model: PhotoCellModel(photo: .stubs[0]))
+        PhotoCell(photo: .stubs[0])
             .previewLayout(.sizeThatFits)
     }
 }

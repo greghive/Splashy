@@ -5,7 +5,8 @@ import SwiftUI
 struct SplashyApp: App {
     var body: some Scene {
         WindowGroup {
-            AppView(model: AppModel())
+            AppView()
+                .environmentObject(SplashyModel())
         }
     }
 }

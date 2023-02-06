@@ -2,13 +2,13 @@
 import XCTest
 @testable import Splashy
 
-final class SearchModelTests: XCTestCase {
-    private var sut: SearchModel!
+final class SplashyModelTests: XCTestCase {
+    private var sut: SplashyModel!
     private let favs = PhotoStore(cacheKey: #file)
     
     func test_searchState_initially_idle() {
         let api = API(session: .init(mockResponder: SearchPhotosSuccessResponder.self))
-        sut = SearchModel(api: api, favs: favs)
+        sut = SplashyModel(api: api, favs: favs)
         XCTAssertEqual(sut.searchState, .idle)
     }
     
@@ -34,10 +34,10 @@ final class SearchModelTests: XCTestCase {
         }
     }
     
-    func searchState_with<T: MockURLResponder>(mockResponder: T.Type) -> SearchModel.SearchState {
+    func searchState_with<T: MockURLResponder>(mockResponder: T.Type) -> SplashyModel.SearchState {
         let api = API(session: .init(mockResponder: mockResponder.self))
-        sut = SearchModel(api: api, favs: favs)
-        var state: SearchModel.SearchState!
+        sut = SplashyModel(api: api, favs: favs)
+        var state: SplashyModel.SearchState!
         let exp = expectation(description: #function)
         let sub = sut.$searchState
             .dropFirst()

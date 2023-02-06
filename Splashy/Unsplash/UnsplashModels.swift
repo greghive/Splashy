@@ -1,4 +1,6 @@
 
+import Foundation
+
 //MARK: - Search API Response
 
 struct SearchResponse: Codable {
@@ -17,13 +19,6 @@ struct Photo: Hashable, Codable, Identifiable {
 extension Photo: Equatable {
     static func == (lhs: Photo, rhs: Photo) -> Bool {
         lhs.id == rhs.id
-    }
-}
-
-import Foundation
-extension Photo {
-    var url: URL? {
-        URL(string: urls.full)
     }
 }
 
@@ -55,4 +50,24 @@ struct ProfileImage: Codable, Hashable {
     let small: String
     let medium: String
     let large: String
+}
+
+//MARK: - Photo View Model
+
+extension Photo {
+    var url: URL? {
+        URL(string: urls.full)
+    }
+    
+    var profileUrl: URL? {
+        URL(string: user.profileImage.medium)
+    }
+    
+    var username: String {
+        user.name
+    }
+    
+    var text: String {
+        description ?? "This image has no description"
+    }
 }

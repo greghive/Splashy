@@ -16,7 +16,7 @@ struct PhotoGrid: View {
                     Button {
                         selection(photo)
                     } label: {
-                        PhotoCell(model: .init(photo: photo))
+                        PhotoCell(photo: photo)
                     }
                 }
             })

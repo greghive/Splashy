@@ -2,11 +2,10 @@
 import Combine
 import Foundation
 
-final class PhotoStore: ObservableObject {
+struct PhotoStore {
     private let cacheKey: String
     private let storage: CodableStorage
-    
-    @Published private(set) var photos: [Photo] = []
+    private(set) var photos: [Photo] = []
     
     init(cacheKey: String) {
         self.cacheKey = cacheKey
@@ -20,7 +19,7 @@ final class PhotoStore: ObservableObject {
         photos.contains(photo)
     }
     
-    func toggle(_ photo: Photo) {
+    mutating func toggle(_ photo: Photo) {
         if contains(photo) {
             remove(photo)
         } else {
@@ -28,17 +27,17 @@ final class PhotoStore: ObservableObject {
         }
     }
     
-    func clear() {
+    mutating func clear() {
         photos = []
         writeToDisk()
     }
     
-    private func add(_ photo: Photo) {
+    private mutating func add(_ photo: Photo) {
         photos.append(photo)
         writeToDisk()
     }
     
-    private func remove(_ photo: Photo) {
+    private mutating func remove(_ photo: Photo) {
         if let index = photos.firstIndex(of: photo) {
             photos.remove(at: index)
             writeToDisk()
@@ -60,7 +59,7 @@ final class PhotoStore: ObservableObject {
 
 extension PhotoStore {
     static var preview: PhotoStore {
-        let store = PhotoStore(cacheKey: "photo_store_preview")
+        var store = PhotoStore(cacheKey: "photo_store_preview")
         store.photos = Photo.stubs
         return store
     }

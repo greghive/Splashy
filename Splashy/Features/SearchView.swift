@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct SearchView: View {
-    @StateObject var model: SearchModel
+    @State var selectedPhoto: Photo?
+    @EnvironmentObject var model: SplashyModel
 
     var body: some View {
         NavigationStack {
@@ -20,10 +21,10 @@ struct SearchView: View {
         
         case .success(let photos):
             PhotoGrid(photos: photos, numColumns: 3) {
-                model.selectedPhoto = $0
+                selectedPhoto = $0
             }
-            .sheet(item: $model.selectedPhoto) {
-                DetailView(model: DetailModel(photo: $0), favs: model.favs)
+            .sheet(item: $selectedPhoto) {
+                DetailView(photo: $0)
             }
             
         case .failure(let message):
@@ -34,7 +35,8 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(model: SearchModel(api: unsplash, favs: .preview))
+        SearchView()
+            .environmentObject(SplashyModel())
     }
 }
 

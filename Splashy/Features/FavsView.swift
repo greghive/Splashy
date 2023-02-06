@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct FavsView: View {
-    @ObservedObject private(set) var model: FavsModel
+    @State var selectedPhoto: Photo?
+    @EnvironmentObject var model: SplashyModel
 
     var body: some View {
         NavigationStack {
@@ -14,10 +15,10 @@ struct FavsView: View {
     @ViewBuilder private var content: some View {
         if model.hasFavs {
             PhotoGrid(photos: model.favs.photos, numColumns: 3) {
-                model.selectedPhoto = $0
+                selectedPhoto = $0
             }
-            .sheet(item: $model.selectedPhoto) {
-                DetailView(model: DetailModel(photo: $0), favs: model.favs)
+            .sheet(item: $selectedPhoto) {
+                DetailView(photo: $0)
             }
         } else {
             MessageText(message: "Your favs will appear here")
@@ -27,9 +28,11 @@ struct FavsView: View {
 
 struct FavsView_Previews: PreviewProvider {
     static var previews: some View {
-        FavsView(model: FavsModel(favs: .preview))
+        FavsView()
             .previewDisplayName("Favs Data")
-        FavsView(model: FavsModel(favs: .empty))
+            .environmentObject(SplashyModel(favs: .preview))
+        FavsView()
             .previewDisplayName("Favs Empty")
+            .environmentObject(SplashyModel(favs: .empty))
     }
 }

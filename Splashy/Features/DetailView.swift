@@ -2,32 +2,32 @@
 import SwiftUI
 
 struct DetailView: View {
-    let model: DetailModel
-    @ObservedObject var favs: PhotoStore
+    let photo: Photo
+    @EnvironmentObject var model: SplashyModel
         
     var body: some View {
         VStack {
-            PhotoImage(url: model.photoUrl)
+            PhotoImage(url: photo.url)
             HStack(spacing: 12) {
-                UserImage(url: model.profileUrl)
+                UserImage(url: photo.profileUrl)
                     .frame(width: 30, height: 30)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(model.username)
+                    Text(photo.username)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.black)
                         .lineLimit(1)
-                    Text(model.description)
+                    Text(photo.text)
                         .font(.system(size: 12, weight: .light))
                         .foregroundColor(.gray)
                         .lineLimit(1)
                 }
                 Spacer()
                 Button {
-                    favs.toggle(model.photo)
+                    model.favs.toggle(photo)
                 } label: {
                     Image(systemName: "star.circle.fill")
                         .resizable()
-                        .foregroundColor(favs.contains(model.photo) ? .blue : .gray)
+                        .foregroundColor(model.favs.contains(photo) ? .blue : .gray)
                 }
                 .frame(width: 30, height: 30)
             }
@@ -40,6 +40,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(model: .preview, favs: .preview)
+        DetailView(photo: .stubs[0])
+            .environmentObject(SplashyModel())
     }
 }
